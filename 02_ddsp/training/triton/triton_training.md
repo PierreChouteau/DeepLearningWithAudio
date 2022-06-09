@@ -39,7 +39,7 @@ In this example, we train on a single-file recording named `traveller_organ.wav`
 It is best to submit the job from a fresh shell with no modules loaded and no Conda environment active, as an active environment may [mess up](https://version.aalto.fi/gitlab/AaltoScienceIT/triton/issues/612) some Python paths.
 
 
-To submit a Convert TFRecord job, run:
+To submit a convert to TFRecord job, run:
 ```
 sbatch $WRKDIR/DeepLearningWithAudio/02_ddsp/training/triton/ddsp_prepare_tfrecord.slrm \
     --conda_env "$WRKDIR/conda/ddsp" \

@@ -1,4 +1,4 @@
-## DDSP Training in AzureVM
+# DDSP Training in AzureVM
 
 Log in to  https://labs.azure.com
 (see the  [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
@@ -10,7 +10,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ```
 
 
-### Transfering your dataset to the virtual machine
+## Transfering your dataset to the virtual machine
 
 You can transfer your files from your own PC to the vm following the below command line structure. Open a new terminal window make sure that you are in your own computer/laptop directory
 
@@ -29,7 +29,7 @@ Please note that the text **"63635"** in the command line above should be change
 
 
 
-### Preparing your dataset
+## Preparing your dataset
 
 ```
 ./dlwa.py ddsp make-dataset --input_name your_name/input_folder --dataset_name your_name/dataset_folder 
@@ -38,7 +38,7 @@ Please note that the text **"63635"** in the command line above should be change
 
 
 
-### Starting the training
+## Starting the training
 
 ```
 ./dlwa.py ddsp train --dataset_name your_name/dataset_folder --model_name your_name/name_model
@@ -47,7 +47,7 @@ Please note that the text **"63635"** in the command line above should be change
 
 
 
-#### Monitor the training
+### Monitor the training
 
 It is most likely that DDSP training will take approximatley 17 hours, during which you can log in and monitor the status of your training. To do that;
 
@@ -77,7 +77,7 @@ aborting
 ```
 
 
-### Transfering your trained model to your own computer/laptop
+## Transfering your trained model to your own computer/laptop
 
 You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. Open a new terminal window make sure that you are in your own computer/laptop directory.
 
