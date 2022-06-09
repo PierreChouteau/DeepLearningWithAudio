@@ -8,16 +8,34 @@ This guide supplements the [main training guide](../README.md). It is assumed yo
 cd "$WRKDIR"
 git clone https://github.com/SopiMlab/magenta.git
 git clone https://github.com/SopiMlab/DeepLearningWithAudio.git
-module load anaconda3
-module load teflon
+module -q load anaconda3
 mkdir -p "$WRKDIR/conda"
-conda create -p "$WRKDIR/conda/gansynth" python=3.8 tensorflow-gpu=2.2
+conda env create -p "/PATH/TO/DIR/conda/gansynth" --file="$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/gansynth-training-env.yml"
+
 source activate "$WRKDIR/conda/gansynth"
 cd magenta
-pip install --use-feature=2020-resolver -e .
+pip install -e .
+```
+
+### protobuf workaround
+
+```
+cd $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training
+mkdir repos 
+cd repos
+git clone --branch v3.13.0 https://github.com/protocolbuffers/protobuf.git
+cd protobuf
+git submodule update --init --recursive
+./autogen.sh
+cd python
+python setup.py build
+conda remove --yes --force protobuf libprotobuf
+python setup.py develop
 ```
 
 ## Train
+
+### GANSynth Training
 
 Prepare your dataset and copy the files to Triton, then submit a batch job using our `train.slrm` script. The script requires the following arguments:
 
@@ -42,7 +60,16 @@ sbatch train.slrm \
     --train_root_dir "$WRKDIR/mymodel"
 ```
 
-TODO: how to compute PCA for GANSpaceSynth
+If you want to change the config file for training parameters, like batch size, num_trans_images... just go to : 
+
+```
+cd $WRKDIR/magenta/magenta/models/gansynth/configs
+vim mel_prog_hires.py
+```
+
+Change what you want (to change something on vim, you need to be in --insert-- mode ! Type "i" to enter this mode. 
+To save your changes it is ":x" | to quit ":q" | to quit without save changes ":q!" 
+
 
 To train with a dataset that has extra labels (here `nsynth_qualities_tfrecord`):
 
@@ -55,4 +82,16 @@ sbatch train.slrm \
     --dataset_name nsynth_qualities_tfrecord
 ```
 
-(2020-11-17: this is still experimental and not really working...)
+### PCA for GANSpaceSynth
+
+You can submit a batch job using our `ganspace.slrm` script. The script requires the following arguments:
+
+- Path to the Conda environment
+- Path to the directory in which is located your GANSynth model
+
+
+To compute PCA for GANSpaceSynth, run:
+
+batch ganspace.slrm \
+    --conda_env "$WRKDIR/conda/gansynth" \
+    --ckpt_dir "$WRKDIR/mymodel"

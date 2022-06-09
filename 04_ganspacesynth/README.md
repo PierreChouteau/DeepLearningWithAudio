@@ -51,7 +51,7 @@ Make sure you have [pyext](../utilities/pyext-setup) and [GANSynth](../03_nsynth
 
 
 
-## Training GANSpaceSynth in Azure My Virtual Machines
+## Training GANSpaceSynth in AzureVM
 
 Follow the instructions for [training GANSynth](../03_nsynth_and_gansynth/gansynth/training/README.md).
 
@@ -62,7 +62,7 @@ When you have a trained GANSynth model, you'll need to compute the PCA for GANSp
 ```
 
 
-**MONITORING THE TRAINING**
+#### Monitor the training
 
 It is most likely that GANSpaceSynth training will take approximatley 2 hours, during which you can log in and monitor the status of your training. To do that;
 
@@ -94,7 +94,7 @@ aborting
 
 
 
-**TRANSFERING YOUR TRAINED MODEL TO YOUR OWN COMPUTER/LAPTOP**
+### Transfering your trained model to your own computer/laptop
 
 You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. Open a new terminal window make sure that you are in your own computer/laptop directory.
 
@@ -129,9 +129,6 @@ gansynth_ganspace \
 ```
 
 You can also experiment with `--layer conv1` and larger values of `--random_z_count` (though the latter will increase the computation time).
-
-
-
 
 
 ## Exercises
