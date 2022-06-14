@@ -63,4 +63,10 @@ For the model, you just need to change ddsp by their to set up the different Con
 
 ### Dataset, Training 
 
-To go further in the use of the script, you can consult the Azure trainings, which show in detail how to use it.
+To go further in the use of the script, you can consult the Azure trainings, which show in detail how to use it:
+* [DDSP](../../02_ddsp/training/azure_training.md)
+* [GANSynth](../../03_nsynth_and_gansynth/gansynth/training/azure_training.md)
+* [SampleRNN](../../05_samplernn/training/azure_samplernn.md) 
+
+
+
