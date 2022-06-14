@@ -1,7 +1,12 @@
 # GANSynth Training in Azure VM
 
+This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.
+For more information on how to use it, and on the organization of the directory, please take a look [here](../../../utilities/dlwa).
+
+---
+
 Log in to https://labs.azure.com
-(see the  [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+(see the [login instructions](../../../00_introduction/))
 
 Enter the DLWA directory:
 ```
@@ -33,7 +38,7 @@ scp -P 63635 input_name.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e9
 
 Note: 
 * The number (**63635**) and **your_name** in the command line above should be changed with your personal info. 
-You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
 
 
 ### Preparing your dataset
@@ -78,7 +83,7 @@ Note:
 It is most likely that GANSynth training will take approximatley 48 hours, during which you can log in and monitor the status of your training. To do that :
 
 Log in to  https://labs.azure.com
-(see the  [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+(see the  [login instructions](../../../00_introduction/))
 
 
 Enter the DLWA directory:
@@ -116,6 +121,6 @@ scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeuro
 
 Note:
 * The number (**63635**) in the command line above should be changed with your personal info. 
-You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
 
 * **your_name/mymodel** and should be replaced with your directory path in your own machine. 
