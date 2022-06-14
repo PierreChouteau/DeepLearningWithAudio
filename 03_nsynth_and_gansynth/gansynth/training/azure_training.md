@@ -1,4 +1,4 @@
-# GANSynth Training in Azure My Virtual Machines
+# GANSynth Training in Azure VM
 
 Log in to https://labs.azure.com
 (see the  [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
