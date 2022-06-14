@@ -31,7 +31,7 @@ pip install -e .
 
 Your training dataset should have about 10-20 minutes of audio from your chosen instrument. The timbre transfer technique is designed for monophonic audio, but polyphonic recordings can also produce interesting results.
 
-### Convert to TFRecord
+### Convert to TFRecord
 
 Prepare your dataset and copy the files to Triton, then submit a batch job to convert the audio dataset to TFRecord dataset format by using our `ddsp_prepare_tfrecord.slrm` script.
 In this example, we train on a single-file recording named `traveller_organ.wav`. 
