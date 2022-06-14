@@ -105,8 +105,6 @@ conda init zsh
 ```
 
 macOS Big Sur:
-source <path to miniconda.... /base/bin/activate> for example
-
 ```
 source /usr/local/Caskroom/miniconda/base/bin/activate
 ```
