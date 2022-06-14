@@ -10,7 +10,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ```
 
 
-## Transfering your dataset to the virtual machine
+## Transfering your dataset to the virtual machine
 
 You can transfer your files from your own PC to the vm following the below command line structure. Open a new terminal window make sure that you are in your own computer/laptop directory
 
@@ -47,7 +47,7 @@ Please note that the text **"63635"** in the command line above should be change
 
 
 
-### Monitor the training
+### Monitor the training
 
 It is most likely that DDSP training will take approximatley 17 hours, during which you can log in and monitor the status of your training. To do that;
 
