@@ -1,4 +1,4 @@
-# dlwa
+# DLWA
 
 `dlwa.py` is a script that aims to simplify setup and usage of the models studied in the Deep Learning with Audio course by automating as much as possible and integrating some common workarounds for problems. It does not expose all the functionality of the underlying tools, but prints out the commands it executes so that the user may understand what is happening underneath and dive deeper if desired.
 
@@ -52,22 +52,15 @@ optional arguments:
 
 ## Usage
 
-### DDSP
-
-#### Setup
+### Setup
 
 ```
 ./dlwa.py ddsp setup
 ```
+Sets up a Conda environment for ddsp, installing all the necessary packages.
+For the model, you just need to change ddsp by their to set up the different Conda environnement. (eg. gansynth, samplernn)
 
-Sets up a Conda environment for DDSP, installing all the necessary packages.
 
-TODO: document missing sections
+### Dataset, Training 
 
-#### Make dataset
-
-### GANSynth
-
-### NSynth
-
-### SampleRNN
+To go further in the use of the script, you can consult the Azure trainings, which show in detail how to use it.
