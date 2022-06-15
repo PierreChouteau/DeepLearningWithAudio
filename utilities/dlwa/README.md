@@ -57,8 +57,8 @@ optional arguments:
 ```
 ./dlwa.py ddsp setup
 ```
-Sets up a Conda environment for ddsp, installing all the necessary packages.
-For the model, you just need to change ddsp by their to set up the different Conda environnement. (eg. gansynth, samplernn)
+Sets up a Conda environment for ddsp, installing all the necessary packages.  
+For the other models, change ddsp by their name to set up the different Conda environnement. (eg. `./dlwa.py gansynth setup`, same thing for samplernn and nsynth)
 
 
 ### Dataset, Training 
