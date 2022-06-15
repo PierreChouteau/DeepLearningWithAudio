@@ -114,13 +114,12 @@ Google provides two [pre-trained neural networks](https://github.com/tensorflow/
 We also have some of our own checkpoints available at the [SOPI Google Drive](https://drive.google.com/drive/folders/1yoJhvr2UY0ID3AP6jumUItJJGSkiBEg_).
 
 
-
-## GANSynth Training in Azure My Virtual Machines
-See [Training GANSynth in Azure VM](training/azure_training.md).
-
-
-## GANSynth training in other virtual machines
+## GANSynth Training
 See [Training GANSynth](training/README.md).
+
+
+## GANSynth Training in AzureVM
+See [Training GANSynth in Azure VM](training/azure_training.md).
 
 
 ## Exercises

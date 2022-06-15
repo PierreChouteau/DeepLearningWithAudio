@@ -70,3 +70,74 @@ To go further in the use of the script, you can consult the Azure trainings, whi
 
 
 
+### Custom argument, extra_argument
+
+#### DDSP:
+
+For the DDSP model, 2 different scripts can be use with custom arguments. If you want to use them, you will need to use it as follows:
+
+Note: The values are the default one.
+
+- ``` 
+  ./dlwa.py ddsp make-dataset --input_name input_folder --dataset_name dataset_folder \
+    --custom \
+    -- \
+    --num_shards 10 \
+    --sample_rate 16000 
+  ``` 
+- ``` 
+  ./dlwa.py gansynth train dataset_folder --model_name name_model\
+    --custom \
+    -- \
+    --gin_file models/solo_instrument.gin \
+    --gin_file datasets/tfrecord.gin \ 
+    --gin_param batch_size=16 \
+    --gin_param train_util.train.num_steps=30000 \
+    --gin_param train_util.train.steps_per_save=300 \
+    --gin_param train_util.Trainer.checkpoints_to_keep=10
+  ``` 
+
+#### GANSynth:
+
+For the GANSynth model, 2 different scripts can be use with extra_arguments. If you want to use them, you will need to use it as follows:
+
+Note: The values are the default one.
+
+
+- ``` 
+  ./dlwa.py gansynth chop-audio --input_name mytunes --output_name mysounds_chopped \
+    --step 64000 \
+    --sample_rate 16000 \
+    --len 64000 \
+    --pitch 32
+
+  ``` 
+- ``` 
+  ./dlwa.py gansynth make-dataset --dataset_name mydataset --model_name mymodel \
+    --sample_rate 16000\
+    --length 64000
+  ``` 
+
+
+#### SampleRNN:
+
+For the GANSynth model, 2 different scripts can be use with custom arguments. If you want to use them, you will need to use it as follows:
+
+Note: The values are the default one.
+
+- ``` 
+  ./dlwa.py samplernn chunk-audio --input_name myinputs --output_name myinputs_chunks \
+    --custom \
+    -- \
+    --chunk_length 8000\
+    --overlap 1000
+  ``` 
+- ``` 
+  ./dlwa.py samplernn train --input_name myinputs_chunks --model_name  model_name  --preset lstm-linear-skip \
+    --custom \
+    -- \
+    --batch_size 128 \
+    --checkpoint_every 5 \
+    --sample_rate 16000 \
+    --config_file ./misc/samplernn/lstm-linear-skip.config.json
+  ``` 

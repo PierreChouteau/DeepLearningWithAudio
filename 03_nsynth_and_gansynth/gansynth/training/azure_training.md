@@ -1,4 +1,4 @@
-# GANSynth Training in Azure VM
+# Training GANSynth in AzureVM
 
 This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.  
 For more information on how to use it, and on the organization of the directory, please take a look [here](../../../utilities/dlwa).
@@ -30,7 +30,7 @@ scp -P 63635 -r mytunes e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.
 
 * Transfer a file
 
-To transfert just a file, it is the same command line without the ```-r```. (-r = recursive).  
+To transfert just a file, it is the same command line without the ```-r``` (-r = recursive).  
 For example, if you want to transfer a file that is called: `myfile.wav`, the command will be:
 ```
 scp -P 63635 input_name.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
@@ -49,7 +49,7 @@ To run it:
 ./dlwa.py gansynth chop-audio --input_name your_name/mytunes --output_name your_name/mysounds_chopped
 ```
 
-This will create suitable 4s chopped files in the `input/your_name/mysounds_chopped` directory (It will automaticaly create the folder `mysounds_chopped`, don't need to create it before).
+This will create suitable 4s chopped files in the `input/your_name/mysounds_chopped` directory (It will automaticaly create the folder `mysounds_chopped`, no need to create it before).
 
 Note:
 - *your_name/mytunes* and  *your_name/mysounds_chopped* should be replaced with your own folder names.
