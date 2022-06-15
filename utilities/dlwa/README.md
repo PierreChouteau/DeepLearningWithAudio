@@ -110,7 +110,6 @@ Note: The values are the default one.
     --sample_rate 16000 \
     --len 64000 \
     --pitch 32
-
   ``` 
 - ``` 
   ./dlwa.py gansynth make-dataset --dataset_name mydataset --model_name mymodel \
