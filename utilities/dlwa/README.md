@@ -74,7 +74,7 @@ To go further in the use of the script, you can consult the Azure trainings, whi
 
 #### DDSP:
 
-For the DDSP model, 2 different scripts can be use with custom arguments. If you want to use them, you will need to use it as follows:
+For DDSP, 2 different scripts can be use with custom arguments. To use them, run it as follows:
 
 Note: The values are the default one.
 
@@ -99,7 +99,7 @@ Note: The values are the default one.
 
 #### GANSynth:
 
-For the GANSynth model, 2 different scripts can be use with extra_arguments. If you want to use them, you will need to use it as follows:
+For GANSynth, 2 different scripts can be use with extra_arguments. To use them, run it as follows:
 
 Note: The values are the default one.
 
@@ -121,7 +121,7 @@ Note: The values are the default one.
 
 #### SampleRNN:
 
-For the GANSynth model, 2 different scripts can be use with custom arguments. If you want to use them, you will need to use it as follows:
+For SampleRNN, 2 different scripts can be use with custom arguments. To use them, run it as follows:
 
 Note: The values are the default one.
 
