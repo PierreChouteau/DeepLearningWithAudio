@@ -1,7 +1,7 @@
 # Training SampleRNN on AzureVM
 
 This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.  
-For more information on how to use it, and on the organization of the directory, please take a look [here](../../../utilities/dlwa).
+For more information on how to use it, and on the organization of the directory, please take a look [here](../../utilities/dlwa).
 
 ---
 
@@ -17,7 +17,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 
 ## Transfer your files to the VM 
 
-Please  before transferring your files and running chunk_audio, you should convert your audio to your desired sample rate (16000 Hz by default) and mono. The train script is supposed to handle this automatically, but it seems to be buggy at the moment.
+Before transferring your files and running chunk_audio, you should convert your audio to your desired sample rate (16000 Hz by default) and mono. The train script is supposed to handle this automatically, but it seems to be buggy at the moment.
 
 You can transfer your files from your own PC to the VM following the below command line structure. 
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
@@ -54,6 +54,7 @@ It will saves all the chunk files into `inputs/your_name/myinputs_chunk` (The fo
 
 Note:
 - *your_name/samplernn-inputs* and  *your_name/samplernn-inputs_chunks* should be replaced with your own folder names.
+- By default, this command use specific parameters to chunk the audio. To change these parameters, you can use the custom and extra arguments, see [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).   
 
 
 
@@ -69,6 +70,8 @@ This command line will start the SampleRNN training and it will save the trained
 Note:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
 - `--preset lstm-linear-skip` is the default choice with dlwa script. It can be changed with [custom argument](../../utilities/dlwa/README.md#custom-argument-extraargument)
+- By default, this command use specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use custom and extra parameters.
+See [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
 
 

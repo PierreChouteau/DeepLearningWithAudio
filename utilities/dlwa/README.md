@@ -70,7 +70,7 @@ To go further in the use of the script, you can consult the Azure trainings, whi
 
 
 
-### Custom argument, extra_argument
+### Custom argument, extra argument
 
 To use custom argument, just add at the end of the command line: 
 ```
@@ -125,8 +125,8 @@ Note: The values are the default one.
     --sample_rate 16000 \
     --len 64000 \
     --pitch 32
-
   ``` 
+  The --step parameter specifies how much to advance in the audio at a time — for example, the step size of 16000 frames used above will advance 1 second at a time, causing 3 seconds of overlap between successive output files. Using 64000 would produce non-overlapping files, etc.
 - ``` 
   ./dlwa.py gansynth make-dataset --dataset_name mydataset --model_name mymodel \
     -- \

@@ -37,7 +37,7 @@ scp -P 63635 input_name.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e9
 ```
 
 Note:
-- The number (*63635*) and *your_name* in the command line above should be changed with your personal info. 
+- The number (*63635*) and *your_name* in the command line above should be changed with your personal info.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
 
 
@@ -53,6 +53,7 @@ This will create suitable 4s chopped files in the `input/your_name/mysounds_chop
 
 Note:
 - *your_name/mytunes* and  *your_name/mysounds_chopped* should be replaced with your own folder names.
+- By default, this command line use specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
 
 
 
@@ -70,6 +71,7 @@ This command line will look into the directory `inputs/your_name/mysounds_choppe
 
 Note:
 - *your_name/mysounds_chopped* and  *your_name/mydataset* should be replaced with your own folder names. 
+- By default, this command line use specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
 
 
 ## Starting the training
@@ -127,6 +129,6 @@ scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeuro
 ```
 
 Note:  
-- The number (*63635*) in the command line above should be changed with your personal info.  
+- The number (*63635*) in the command line above should be changed with your personal number.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
 - *your_name/mymodel* and *~/Downloads* should be replaced with your directory path in your own machine. 
