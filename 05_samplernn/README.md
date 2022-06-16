@@ -93,14 +93,13 @@ Finally, open `samplernn.pd`. You will need to edit the `load` message to use yo
 We have some pre-trained checkpoints in the [SOPI Google Drive](https://drive.google.com/drive/folders/1yoJhvr2UY0ID3AP6jumUItJJGSkiBEg_).
 
 
+
+## SampleRNN Training on AzureVM
+See [Training SampleRNN on AzureVM](training/azure_samplernn.md).
+
+
 ## SampleRNN Training
-
 See [Training SampleRNN](training/README.md).
-
-
-## SampleRNN Training in AzureVM
-
-See [Training SampleRNN](training/azure_samplernn.md).
 
 
 ## Exercises

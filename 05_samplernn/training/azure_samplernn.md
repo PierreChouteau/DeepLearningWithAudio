@@ -6,7 +6,7 @@ For more information on how to use it, and on the organization of the directory,
 ---
 
 Log in to https://labs.azure.com
-(see the [login instructions](../../../00_introduction/))
+(see the [login instructions](../../00_introduction/))
 
 
 Enter the DLWA directory:
@@ -64,12 +64,12 @@ Note:
 ./dlwa.py samplernn train --input_name your_name/samplernn-inputs_chunks --model_name  your_name/mysamplernnmodel  --preset lstm-linear-skip
 ```
 
-This command line will start the SampleRNN training and it will save the trained checkpoints and logs into DeepLearningWithAudio/utilities/dlwa/models/samplernn/**your_name/model_name** and it will save the generated audio into DeepLearningWithAudio/utilities/dlwa/generated/**your_name/model_name**.
+This command line will start the SampleRNN training and will save the trained checkpoints and logs into `models/samplernn/your_name/model_name`. It will also saves the generated audio into `generated/your_name/model_name`.
 
 
 Note:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
-- `--preset lstm-linear-skip` is the default choice with dlwa script. It can be changed with [custom argument](../../utilities/dlwa/README.md#custom-argument-extraargument)
+- `--preset lstm-linear-skip` is the default choice with dlwa script.
 - By default, this command use specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use custom and extra parameters.
 See [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
@@ -79,8 +79,7 @@ See [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom
 
 It is most likely that SampleRNN training will take approximatley 38 hours, during which you can log in and monitor the status of your training. To do that:
 
-Log in to https://labs.azure.com
-(see the [login instructions](../../../00_introduction/))
+Log in to https://labs.azure.com (see the [login instructions](../../00_introduction/))
 
 
 Enter the DLWA directory:
@@ -119,5 +118,5 @@ scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeuro
 
 Note:  
 - The number (*63635*) in the command line above should be changed with your personal info.  
-You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 - *your_name/mysamplernnmodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

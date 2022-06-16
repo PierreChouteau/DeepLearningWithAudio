@@ -127,7 +127,7 @@ The timbre transfer is unfortunately quite slow without GPU acceleration (unsupp
 A few example checkpoints are provided by the DDSP authors, and we've trained some additional ones. You can find all of them in the [SOPI Google Drive](https://drive.google.com/drive/folders/1yoJhvr2UY0ID3AP6jumUItJJGSkiBEg_).
 
 
-## DDSP Training in AzureVM
+## DDSP Training on AzureVM
 See [DDSP training on AzureVM](./training/azure_training.md).
 
 

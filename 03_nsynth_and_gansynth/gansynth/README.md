@@ -93,16 +93,14 @@ You can now run the patches:
 - `gansynth_multi.pd`
 - `gansynth_hallucination.pd`
 
-**Linux only:**
-when you load the GANSynth model in your pd patch, if you have the "notimplemented" error in Pd window;
-
-first make sure that you are in the magenta environment;
-
-then, you need to unistall tensorflow and numpy and after that reinstall them again: 
-```
-pip uninstall tensorflow numpy
-pip install tensorflow numpy
-```
+**Linux only:**  
+when you load the GANSynth model in your pd patch, if you have the `notimplemented error` in Pd window:
+- First make sure that you are in the magenta environment
+- then, you need to unistall tensorflow and numpy and reinstall them again: 
+    ```
+    pip uninstall tensorflow numpy
+    pip install tensorflow numpy
+    ```
 
 
 
@@ -114,12 +112,11 @@ Google provides two [pre-trained neural networks](https://github.com/tensorflow/
 We also have some of our own checkpoints available at the [SOPI Google Drive](https://drive.google.com/drive/folders/1yoJhvr2UY0ID3AP6jumUItJJGSkiBEg_).
 
 
+## GANSynth Training on AzureVM
+See [Training GANSynth on AzureVM](training/azure_training.md).
+
 ## GANSynth Training
 See [Training GANSynth](training/README.md).
-
-
-## GANSynth Training in AzureVM
-See [Training GANSynth on AzureVM](training/azure_training.md).
 
 
 ## Exercises
