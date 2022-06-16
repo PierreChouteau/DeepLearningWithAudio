@@ -13,7 +13,12 @@ Enter the DLWA directory:
 cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ```
 
-## Transfer your files to the VM 
+## Create a dataset
+
+Your training dataset should have about 10-20 minutes of audio from your chosen instrument (violin, guitar...). The timbre transfer technique is designed for monophonic audio, but polyphonic recordings can also produce interesting results. Experiment!
+
+
+### Transfer your files to the VM 
 
 You can transfer your files from your own PC to the VM following the below command line structure.  
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
@@ -40,12 +45,7 @@ You can find your own number in the ssh command line that you use to connect to 
 
 
 
-## Create a dataset
-
-Your training dataset should have about 10-20 minutes of audio from your chosen instrument (violin, guitar...). The timbre transfer technique is designed for monophonic audio, but polyphonic recordings can also produce interesting results. Experiment!
-
-
-## Convert to TFRecord
+### Convert to TFRecord
 
 DDSP expects input in the TFRecord format, which is a generic file format for TensorFlow data. So, the WAV files need to be converted.  
 To make the conversion, you can use the `make-dataset` command. 
