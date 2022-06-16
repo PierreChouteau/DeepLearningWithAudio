@@ -72,17 +72,19 @@ To go further in the use of the script, you can consult the Azure trainings, whi
 
 ### Custom argument, extra_argument
 
-To use custom argument, just add at the end of the command line: 
+To use a custom argument, add it to the end of the command line: 
 ```
+./dlwa.py MODEL COMMAND [ARGUMENTS ...] \
 --custom \
 -- \ 
---YourCustomArguments
+--customArguments ...
 ```
 
-To use extra argument, just add at the end of the command line:
+To use extra argument, add it to the end of the command line: 
 ```
+./dlwa.py MODEL COMMAND [ARGUMENTS ...] \
 -- \ 
---YourExtraArguments
+--extraArguments ...
 ```
 
 #### DDSP:
