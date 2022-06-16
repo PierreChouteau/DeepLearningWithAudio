@@ -72,11 +72,26 @@ To go further in the use of the script, you can consult the Azure trainings, whi
 
 ### Custom argument, extra_argument
 
+To use custom argument, just add at the end of the command line: 
+```
+--custom \
+-- \ 
+--YourCustomArguments
+```
+
+To use extra argument, just add at the end of the command line:
+```
+-- \ 
+--YourExtraArguments
+```
+
 #### DDSP:
 
-For DDSP, 2 different scripts can be use with custom arguments. To use them, run it as follows:
+For the DDSP model, 2 different scripts can be use with custom arguments or extra_arguments. If you want to use them, you will need to use it as follows:
 
-Note: The values are the default one.
+Note:
+- The values below are the one that is used without changing custom arguments.
+- All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
 
 - ``` 
   ./dlwa.py ddsp make-dataset --input_name input_folder --dataset_name dataset_folder \
@@ -86,7 +101,7 @@ Note: The values are the default one.
     --sample_rate 16000 
   ``` 
 - ``` 
-  ./dlwa.py gansynth train dataset_folder --model_name name_model\
+  ./dlwa.py ddsp train dataset_folder --model_name name_model\
     --custom \
     -- \
     --gin_file models/solo_instrument.gin \
@@ -99,20 +114,22 @@ Note: The values are the default one.
 
 #### GANSynth:
 
-For GANSynth, 2 different scripts can be use with extra_arguments. To use them, run it as follows:
+For the GANSynth model, 2 different scripts can be use with extra_arguments. If you want to use them, you will need to use it as follows:
 
 Note: The values are the default one.
 
-
 - ``` 
   ./dlwa.py gansynth chop-audio --input_name mytunes --output_name mysounds_chopped \
+    -- \
     --step 64000 \
     --sample_rate 16000 \
     --len 64000 \
     --pitch 32
+
   ``` 
 - ``` 
   ./dlwa.py gansynth make-dataset --dataset_name mydataset --model_name mymodel \
+    -- \
     --sample_rate 16000\
     --length 64000
   ``` 
@@ -120,15 +137,17 @@ Note: The values are the default one.
 
 #### SampleRNN:
 
-For SampleRNN, 2 different scripts can be use with custom arguments. To use them, run it as follows:
+For the SampleRNN model, 2 different scripts can be use with custom arguments or extra_arguments. If you want to use them, you will need to use it as follows:
 
-Note: The values are the default one.
+Note: 
+- The values below are the one that is used without changing custom arguments.
+- All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
 
 - ``` 
   ./dlwa.py samplernn chunk-audio --input_name myinputs --output_name myinputs_chunks \
     --custom \
     -- \
-    --chunk_length 8000\
+    --chunk_length 8000 \
     --overlap 1000
   ``` 
 - ``` 
