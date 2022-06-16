@@ -53,11 +53,11 @@ You can find your own number in the ssh command line that you use to connect to 
 ./dlwa.py samplernn chunk-audio --input_name your_name/samplernn-inputs --output_name your_name/samplernn-inputs_chunks
 ```
 
-It will saves all the chunk files into `inputs/your_name/myinputs_chunk` (The folder `myinputs_chunk` will be automaticaly create with the command, don't need to create it before).
+It will saves all the chunk files into `inputs/your_name/samplernn-inputs_chunks` (The folder `samplernn-inputs_chunks` will be automaticaly create with the command, don't need to create it before).
 
 __Note__:
 - *your_name/samplernn-inputs* and  *your_name/samplernn-inputs_chunks* should be replaced with your own folder names.
-- By default, this command uses specific parameters to chunk the audio. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).   
+- By default, this command uses specific parameters to chunk the audio. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extra-argument).   
 
 
 
@@ -73,7 +73,7 @@ This command line will start the SampleRNN training and will save the checkpoint
 __Note__:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
 - `--preset lstm-linear-skip` is the default choice with dlwa script.
-- By default, this command uses specific parameters. For example, the default `sample rate` is specify as `16000Hz`, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. For example, the default `sample rate` is specify as `16000Hz`, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extra-argument).  
 
 
 

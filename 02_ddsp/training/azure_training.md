@@ -59,7 +59,7 @@ It will look into the input directory `input/your_name/violin` and save the corr
 
 __Note__:
 - *your_name/violin* and  *your_name/myviolindataset* should be replaced with your own folder names.
-- By default, this command uses specific parameters. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extra-argument).  
 
 
 
@@ -74,7 +74,7 @@ This command line will start the DDSP training and save the checkpoints, logs an
 
 __Note__:
 - *your_name/myviolindataset* and *your_name/myviolinmodel* should be replaced with your own folder names.
-- By default, this command uses specific parameters. If you want to go in details to customize your training, you can check them [here](../../utilities/dlwa/README.md#custom-argument-extraargument).
+- By default, this command uses specific parameters. If you want to go in details to customize your training, you can check them [here](../../utilities/dlwa/README.md#custom-argument-extra-argument).
 
 
 

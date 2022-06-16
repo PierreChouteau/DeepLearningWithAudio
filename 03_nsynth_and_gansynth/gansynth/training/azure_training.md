@@ -54,7 +54,7 @@ This will create suitable 4s chopped files in the `input/your_name/mysounds_chop
 
 __Note__:
 - *your_name/mytunes* and *your_name/mysounds_chopped* should be replaced with your own folder names.
-- By default, this command line uses specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument).
+- By default, this command line uses specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extra-argument).
 
 
 
@@ -72,7 +72,7 @@ This command line will look into the directory `inputs/your_name/mysounds_choppe
 
 __Note__:
 - *your_name/mysounds_chopped* and  *your_name/mydataset* should be replaced with your own folder names. 
-- By default, this command line uses specific parameters. You can modify them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
+- By default, this command line uses specific parameters. You can modify them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extra-argument)
 
 
 ## Starting the training
