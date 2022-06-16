@@ -16,8 +16,9 @@ Enter the DLWA directory:
 cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ```
 
+## Create a dataset
 
-## Transfer your files to the VM 
+### Transfer your files to the VM 
 
 Before transferring your files and running chunk_audio, you should convert your audio to your desired ***sample rate*** (16000 Hz by default) and ***mono***. The `train` script is supposed to handle this automatically, but it seems to be buggy at the moment.
 
@@ -46,7 +47,7 @@ You can find your own number in the ssh command line that you use to connect to 
 
 
 
-## Preparing your dataset
+### Preparing your dataset
 
 ```
 ./dlwa.py samplernn chunk-audio --input_name your_name/samplernn-inputs --output_name your_name/samplernn-inputs_chunks
