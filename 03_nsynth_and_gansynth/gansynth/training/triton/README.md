@@ -10,14 +10,14 @@ git clone https://github.com/SopiMlab/magenta.git
 git clone https://github.com/SopiMlab/DeepLearningWithAudio.git
 module -q load anaconda3
 mkdir -p "$WRKDIR/conda"
-conda env create -p "/PATH/TO/DIR/conda/gansynth" --file="$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/gansynth-training-env.yml"
+conda env create -p "$WRKDIR/conda/gansynth" --file="$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/gansynth-training-env.yml"
 
 source activate "$WRKDIR/conda/gansynth"
 cd magenta
 pip install -e .
 ```
 
-### protobuf workaround
+### Protobuf Workaround
 
 ```
 cd $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training
@@ -33,11 +33,56 @@ conda remove --yes --force protobuf libprotobuf
 python setup.py develop
 ```
 
+## Creation of a dataset
+
+Let's assume that you want to create a dataset in your `WRKDIR` directory:
+```
+cd "$WRKDIR"
+```
+
+Create a folder and put all your WAV files in it.  
+e.g :
+```
+wget "https://dl.dropboxusercontent.com/s/0qn8nsh0ljym7dl/samples.zip?dl=0"
+mv samples.zip\?dl=0 samples.zip 
+unzip samples.zip
+```
+
+To chop up long files to the desired length and sampling rate (4s and 16000Hz for GANSynth), you can use the `chop.py` script.  
+
+To run it:
+```
+python $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/chop.py --step 16000 samples mysampleschopped
+```
+
+Argument to add if necessary:  
+- `--sample_rate` -> default=16000  
+- `--len` -> default=64000  
+- `--step` -> default=64000  
+- `--pitch` -> default=32  
+
+This command line will create suitable 4s chopped files in the `$WRKDIR/mysampleschopped` directory.  
+ 
+### Convert to TFRecord 
+
+GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our `make_dataset.py` script:
+```
+python $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/make_dataset.py --in_dir mysampleschopped --out_dir mydataset
+```
+
+Argument to add if necessary:  
+- `--out_dir` : the folder will be create by the script, so don't create it before  
+- `--sample_rate` -> default=16000  
+- `--length` -> default=64000  
+
+
+The script will generate 2 files (`data.tfrecord` and `meta.json`) in the `$WRKDIR/mydataset` directory. You will need them later.
+
 ## Train
 
-### GANSynth Training
+### GANSynth Training
 
-Prepare your dataset and copy the files to Triton, then submit a batch job using our `train.slrm` script. The script requires the following arguments:
+When your dataset is ready, submit a batch job using our `train.slrm` script. The script requires the following arguments:
 
 - Path to the Conda environment
 - Path to your training data file (`data.tfrecord`)
@@ -51,7 +96,6 @@ cd "$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/trito
 ```
 
 To submit a GANSynth training job, run:
-
 ```
 sbatch train.slrm \
     --conda_env "$WRKDIR/conda/gansynth" \
@@ -60,15 +104,15 @@ sbatch train.slrm \
     --train_root_dir "$WRKDIR/mymodel"
 ```
 
-If you want to change the config file for training parameters, like batch size, num_trans_images... just go to : 
-
+If you want to change the config file for training parameters, like batch size, num_trans_images... just go to: 
 ```
 cd $WRKDIR/magenta/magenta/models/gansynth/configs
 vim mel_prog_hires.py
 ```
 
-Change what you want (to change something on vim, you need to be in --insert-- mode ! Type "i" to enter this mode. 
-To save your changes it is ":x" | to quit ":q" | to quit without save changes ":q!" 
+Change what you want:  
+- To change something on vim, you need to be in `--insert--` mode ! Type `i` to enter this mode. 
+- To save your changes it is `:x` | to quit `:q` | to quit without save changes `:q!` 
 
 
 To train with a dataset that has extra labels (here `nsynth_qualities_tfrecord`):
@@ -82,16 +126,20 @@ sbatch train.slrm \
     --dataset_name nsynth_qualities_tfrecord
 ```
 
-### PCA for GANSpaceSynth
+### PCA for GANSpaceSynth
 
-You can submit a batch job using our `ganspace.slrm` script. The script requires the following arguments:
+To compute PCA for GANSpaceSynth, you can submit a batch job using our `ganspace.slrm` script. The script requires the following arguments:
 
 - Path to the Conda environment
 - Path to the directory in which is located your GANSynth model
 
 
-To compute PCA for GANSpaceSynth, run:
-
-batch ganspace.slrm \
+Run it as follows:
+```
+cd "$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/triton"
+```
+```
+sbatch ganspace.slrm \
     --conda_env "$WRKDIR/conda/gansynth" \
     --ckpt_dir "$WRKDIR/mymodel"
+```
