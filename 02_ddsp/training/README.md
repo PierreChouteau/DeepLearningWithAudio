@@ -8,6 +8,13 @@ This guide describes how to train a DDSP timbre transfer model using your own so
 
 If you want to train on Aalto computers, see our [Using Aalto computers](../using-aalto-computers.md) document.
 
+For training on the Triton computing cluster, see also [Training DDSP on Triton](triton/README.md).
+
+----
+## Using `dlwa` on AzureVM
+
+If you want to train DDSP in an easy way with our `dlwa.py` script and on AzureVM, see our [Training DDSP on AzureVM](./azure_training.md) document.
+
 ----
 
 ## ffmpeg

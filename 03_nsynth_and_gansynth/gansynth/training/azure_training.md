@@ -1,4 +1,4 @@
-# Training GANSynth in AzureVM
+# Training GANSynth on AzureVM
 
 This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.  
 For more information on how to use it, and on the organization of the directory, please take a look [here](../../../utilities/dlwa).
@@ -43,7 +43,7 @@ You can find your own number in the ssh command line that you use to connect to 
 
 ### Preparing your dataset
 
-To chop up long files to the desired length and sampling rate (4s and 16000Hz for GANSynth), you can use the `chop.py`.  
+To chop up long files to the desired length and sampling rate (4s and 16000Hz for GANSynth), you can use the `chop-audio` command.  
 To run it:
 ```
 ./dlwa.py gansynth chop-audio --input_name your_name/mytunes --output_name your_name/mysounds_chopped
@@ -58,7 +58,7 @@ Note:
 
 ### Convert to TFRecord
 
-GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our script `make_dataset.py`.
+GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our script `make-dataset` command.
 
 Run it as follows:
 
@@ -72,7 +72,7 @@ Note:
 - *your_name/mysounds_chopped* and  *your_name/mydataset* should be replaced with your own folder names. 
 
 
-## Run the training
+## Starting the training
 
 ```
 ./dlwa.py gansynth train --dataset_name your_name/mydataset --model_name your_name/mymodel
@@ -88,8 +88,8 @@ Note:
 
 It is most likely that GANSynth training will take approximatley 48 hours, during which you can log in and monitor the status of your training. To do that :
 
-Log in to  https://labs.azure.com
-(see the  [login instructions](../../../00_introduction/))
+Log in to https://labs.azure.com
+(see the [login instructions](../../../00_introduction/))
 
 
 Enter the DLWA directory:
@@ -128,4 +128,4 @@ scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeuro
 Note:  
 - The number (*63635*) in the command line above should be changed with your personal info.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
-- *your_name/mymodel* and should be replaced with your directory path in your own machine. 
+- *your_name/mymodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

@@ -13,7 +13,7 @@ For training on the Triton computing cluster, see also [Training GANSynth on Tri
 ----
 ## Using `dlwa` on AzureVM
 
-If you want to train GANSynth in an easy way with our `dlwa.py` and on AzureVM, see our [Training GANSynth on AzureVM](./azure_training.md) document.
+If you want to train GANSynth in an easy way with our `dlwa.py` script and on AzureVM, see our [Training GANSynth on AzureVM](./azure_training.md) document.
 
 ----
 

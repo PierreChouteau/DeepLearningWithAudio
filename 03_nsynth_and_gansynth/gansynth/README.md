@@ -119,7 +119,7 @@ See [Training GANSynth](training/README.md).
 
 
 ## GANSynth Training in AzureVM
-See [Training GANSynth in Azure VM](training/azure_training.md).
+See [Training GANSynth on AzureVM](training/azure_training.md).
 
 
 ## Exercises
