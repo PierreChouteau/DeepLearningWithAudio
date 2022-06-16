@@ -1,7 +1,7 @@
 # Training SampleRNN on AzureVM
 
 This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.  
-For more information on how to use it, and on the organization of the directory, please take a look [here](../../../utilities/dlwa).
+For more information on how to use it, and on the organization of the directory, please take a look [here](../../utilities/dlwa).
 
 ---
 
