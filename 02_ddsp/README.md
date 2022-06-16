@@ -127,20 +127,19 @@ The timbre transfer is unfortunately quite slow without GPU acceleration (unsupp
 A few example checkpoints are provided by the DDSP authors, and we've trained some additional ones. You can find all of them in the [SOPI Google Drive](https://drive.google.com/drive/folders/1yoJhvr2UY0ID3AP6jumUItJJGSkiBEg_).
 
 
+## DDSP Training in AzureVM
+See [DDSP training on AzureVM](./training/azure_training.md).
+
 
 ## DDSP Training
-See [DDSP training](./training/training.md).
-
-
-## DDSP Training in AzureVM
-See [DDSP training in AzureVM](./training/azure_training.md).
+See [DDSP training](./training/README.md).
 
 
 ## Exercises
 
 1. Try a few different combinations of input audio and checkpoint. What kind of observations can you make about how the inputs' characteristics affect the output?
 2. Experiment with the f₀ octave shift, f₀ confidence threshold and loudness dB shift parameters. How does the algorithm respond to extreme values of these?
-3. (optional) Prepare your own audio and [train](./training/training.md) a new model.
+3. (optional) Prepare your own audio and [train](./training/azure_training.md) a new model.
 
 ## Links
 

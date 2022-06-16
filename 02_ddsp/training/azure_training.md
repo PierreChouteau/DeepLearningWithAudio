@@ -59,7 +59,7 @@ It will look into the input directory `input/your_name/violin` and save the corr
 
 Note:
 - *your_name/violin* and  *your_name/myviolindataset* should be replaced with your own folder names.
-- By default, this command use specific parameters. To change these parameters, you can use the custom and extra arguments, see [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. To change these parameters, you can use the custom and extra arguments, see [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
 
 

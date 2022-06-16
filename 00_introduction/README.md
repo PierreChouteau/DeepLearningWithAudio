@@ -29,7 +29,7 @@ To stop the VM, click on the same button as to start the VM.
 
 ## Student Azure Lab VM Log in 
 
-In order to log in to Azure Lab, you need to [__remotely connect to Aalto University VPN network__](https://www.aalto.fi/en/services/establishing-a-remote-connection-vpn-to-an-aalto-network#6-remote-connection-to-students--and-employees--own-devices). Please follow the instructions in the [link](https://www.aalto.fi/en/services/establishing-a-remote-connection-vpn-to-an-aalto-network#6-remote-connection-to-students--and-employees--own-devices).
+In order to log in to Azure Lab, you need to [__remotely connect to Aalto University VPN network__](https://www.aalto.fi/en/services/establishing-a-remote-connection-vpn-to-an-aalto-network#6-remote-connection-to-students--and-employees--own-devices).
 
 
 After you establish a VPN connection to Aalto university, you just need to go to https://labs.azure.com and __Log in__ with your aalto account.
