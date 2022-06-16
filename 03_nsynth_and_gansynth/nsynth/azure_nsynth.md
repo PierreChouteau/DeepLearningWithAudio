@@ -35,9 +35,9 @@ For example, if you want to transfer a file that is called: `myinput.wav`, the c
 scp -P 63635 myinput.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
 ```
 
-Note:
+__Note__:
 - The number (*63635*) and *your_name* in the command line above should be changed with your personal info.  
-You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 
 
 ## Preparing your dataset
@@ -46,7 +46,7 @@ You can find your own number in the ssh command line that you use to connect to 
 ./dlwa.py nsynth prepare --input_name your_name/mynsynthdataset --output_name your_name/nsynth
 ```
 
-Note:
+__Note__:
 - *your_name/mynsynthdataset* and *your_name/nsynth* should be replaced with your own folder names.
 
 
@@ -58,7 +58,7 @@ Note:
 
 This command line will start generating the audio samples and will save it into `models/nsynth/your_name/nsynth` directory.
 
-Note:
+__Note__:
 - *your_name/nsynth* and  *your_name/nsynth* should be replaced with your own folder names. 
 
 
@@ -94,7 +94,8 @@ aborting
 
 ## Transfer your trained model to your own computer/laptop
 
-You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. Open a new terminal window make sure that you are in your own computer/laptop directory.
+You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure.  
+Open a new terminal window make sure that you are in your own computer/laptop directory.
 
 * Transfer a folder
 
@@ -102,7 +103,7 @@ You can transfer your files, such as trained models from your the virtual machin
 scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshareDeepLearningWithAudio/utilities/dlwa/models/nsynth/your_name/nsynth ~/Downloads
 ```
 
-Note:  
+__Note__:  
 - The number (*63635*) in the command line above should be replaced with your personal number.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 - *your_name/nsynth* and *~/Downloads* should be replaced with your directory path in your own machine. 

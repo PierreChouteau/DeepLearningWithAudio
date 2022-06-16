@@ -1,7 +1,9 @@
 # Training SampleRNN on AzureVM
 
 This guide is based on the DLWA script that aims to simplify usage of the models studied in the DeepLearningWithAudio course.  
-For more information on how to use it, and on the organization of the directory, please take a look [here](../../utilities/dlwa).
+For more information on how to use it, and on the organization of the directory, please take a look [here](../../utilities/dlwa).  
+
+See also [PRiSM SampleRNN - Training](https://github.com/SopiMlab/prism-samplernn#training) for more details.
 
 ---
 
@@ -38,9 +40,9 @@ For example, if you want to transfer a file that is called: `samplernn.wav`, the
 scp -P 63635 samplernn.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
 ```
 
-Note:
+__Note__:
 - The number (*63635*) and *your_name* in the command line above should be changed with your personal info. 
-You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 
 
 
@@ -52,7 +54,7 @@ You can find your own number in the ssh command line that you use to connect to 
 
 It will saves all the chunk files into `inputs/your_name/myinputs_chunk` (The folder `myinputs_chunk` will be automaticaly create with the command, don't need to create it before).
 
-Note:
+__Note__:
 - *your_name/samplernn-inputs* and  *your_name/samplernn-inputs_chunks* should be replaced with your own folder names.
 - By default, this command uses specific parameters to chunk the audio. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).   
 
@@ -67,7 +69,7 @@ Note:
 This command line will start the SampleRNN training and will save the checkpoints and logs into `models/samplernn/your_name/mysamplernnmodel`. It will also save the generated audio into `generated/your_name/mysamplernnmodel`.
 
 
-Note:
+__Note__:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
 - `--preset lstm-linear-skip` is the default choice with dlwa script.
 - By default, this command uses specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extraargument).  
@@ -106,7 +108,7 @@ aborting!
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure. 
+You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure.  
 Open a new terminal window and make sure that you are in your own laptop directory.  
 
 * Transfer a folder
@@ -115,7 +117,7 @@ Open a new terminal window and make sure that you are in your own laptop directo
 scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshareDeepLearningWithAudio/utilities/dlwa/models/samplernn/your_name/model_name ~/Downloads
 ```
 
-Note:  
+__Note__:
 - The number (*63635*) in the command line above should be changed with your personal info.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 - *your_name/mysamplernnmodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

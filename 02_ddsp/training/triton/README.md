@@ -1,6 +1,6 @@
 # DDSP training
 
-This guide supplements the [main training guide](../../training.md). It is assumed you have access to the [Triton](https://scicomp.aalto.fi/triton/) computing cluster and basic familiarity with how to run batch jobs there.
+This guide supplements the [main training guide](../README.md). It is assumed you have access to the [Triton](https://scicomp.aalto.fi/triton/) computing cluster and basic familiarity with how to run batch jobs there.
 
 ## Set up the Conda environment
 

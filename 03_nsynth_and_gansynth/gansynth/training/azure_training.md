@@ -36,7 +36,7 @@ For example, if you want to transfer a file that is called: `myfile.wav`, the co
 scp -P 63635 input_name.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
 ```
 
-Note:
+__Note__:
 - The number (*63635*) and *your_name* in the command line above should be changed with your personal info.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
 
@@ -51,7 +51,7 @@ To run it:
 
 This will create suitable 4s chopped files in the `input/your_name/mysounds_chopped` directory (It will automaticaly create the folder `mysounds_chopped`, no need to create it before).
 
-Note:
+__Note__:
 - *your_name/mytunes* and *your_name/mysounds_chopped* should be replaced with your own folder names.
 - By default, this command line uses specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
 
@@ -69,7 +69,7 @@ Run it as follows:
 
 This command line will look into the directory `inputs/your_name/mysounds_chopped` and generate 2 files (`data.tfrecord` and `meta.json`) in the output directory `datasets/gansynth/your_name/mydataset`
 
-Note:
+__Note__:
 - *your_name/mysounds_chopped* and  *your_name/mydataset* should be replaced with your own folder names. 
 - By default, this command line uses specific parameters. You can modify them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
 
@@ -83,7 +83,7 @@ Run the training with the `train` command:
 
 This command line will start the GANSynth training. It will load the training data that is stored in the 2 files, `data.tfrecord` and `meta.json`, and generate checkpoints in the `gansynth/your_name/mymodel` directory
 
-Note:
+__Note__:
 - *your_name/mydataset* and  *your_name/mymodel* should be replaced with your own folder names.
 
 
@@ -120,7 +120,7 @@ aborting
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure. 
+You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure.  
 Open a new terminal window and make sure that you are in your own laptop directory.  
 
 * Transfer the folder of the trained model
@@ -128,7 +128,7 @@ Open a new terminal window and make sure that you are in your own laptop directo
 scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshareDeepLearningWithAudio/utilities/dlwa/models/gansynth/your_name/mymodel ~/Downloads
 ```
 
-Note:  
+__Note__:  
 - The number (*63635*) in the command line above should be changed with your personal number.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
 - *your_name/mymodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

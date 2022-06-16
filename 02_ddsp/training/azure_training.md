@@ -34,9 +34,9 @@ For example, if you want to transfer a file that is called: `violin.wav`, the co
 scp -P 63635 violin.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
 ```
 
-Note:
+__Note__:
 - The number (*63635*) and *your_name* in the command line above should be changed with your personal info.  
-You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 
 
 
@@ -57,7 +57,7 @@ Run it as follows:
 
 It will look into the input directory `input/your_name/violin` and save the corresponding data.tfrecord files in the output directory `dataset/ddsp/your_name/myviolindataset`.
 
-Note:
+__Note__:
 - *your_name/violin* and  *your_name/myviolindataset* should be replaced with your own folder names.
 - By default, this command uses specific parameters. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
@@ -72,7 +72,7 @@ Run the training with the `train` command:
 
 This command line will start the DDSP training and save the checkpoints, logs and summaries in the `models/ddsp/your_name/myviolinmodel` directory.
 
-Note:
+__Note__:
 - *your_name/myviolindataset* and *your_name/myviolinmodel* should be replaced with your own folder names.
 - By default, this command uses specific parameters. If you want to go in details to customize your training, you can check them [here](../../utilities/dlwa/README.md#custom-argument-extraargument).
 
@@ -108,7 +108,7 @@ aborting
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure. 
+You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure.  
 Open a new terminal window and make sure that you are in your own laptop directory.  
 
 * Transfer the folder of the trained model
@@ -117,7 +117,7 @@ Open a new terminal window and make sure that you are in your own laptop directo
 scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/models/ddsp/your_name/myviolinmodel ~/Downloads
 ```
 
-Note:  
+__Note__:  
 - The number (*63635*) in the command line above should be replaced with your personal number.  
 You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 - *your_name/myviolinmodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

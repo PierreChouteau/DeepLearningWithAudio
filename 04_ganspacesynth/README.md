@@ -67,8 +67,8 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 
 It is most likely that GANSpaceSynth training will take approximatley 2 hours, during which you can log in and monitor the status of your training. To do that;
 
-Log in to  https://labs.azure.com
-(see the  [login instructions](../00_introduction/))
+Log in to https://labs.azure.com
+(see the [login instructions](../00_introduction/))
 
 Enter the DLWA directory:
 ```
@@ -104,9 +104,9 @@ Open a new terminal window and make sure that you are in your own computer/lapto
 scp -P 63635 e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshareDeepLearningWithAudio/utilities/dlwa/models/gansynth/your_name/mymodel/ganspace.pickle ~/Downloads
 ```
 
-Note:  
+__Note__:  
 - The number (*63635*) in the command line above should be replaced with your personal number.  
-You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../00_introduction/))
 - *your_name/mymodel* and *~/Downloads* should be replaced with your directory path in your own machine. 
 
 

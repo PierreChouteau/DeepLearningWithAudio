@@ -28,7 +28,7 @@ sudo apt install ffmpeg
 
 ## Conda environment
 
-First make sure you have a Conda environment set up for DDSP — see our [main DDSP guide](README.md) (you can stop before the `sopilib` installation).
+First make sure you have a Conda environment set up for DDSP — see our [main DDSP guide](../README.md) (you can stop before the `sopilib` installation).
 
 The DDSP package seems to have some issues with installing dependencies, and when trying to run the training scripts you may encounter errors like:
 
