@@ -13,9 +13,7 @@ Enter the DLWA directory:
 cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ```
 
-## Create a dataset
-
-### Transfer your files to the VM 
+## Transfer your files to the VM 
 
 You can transfer your files from your own PC to the VM following the below command line structure. 
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
@@ -42,13 +40,22 @@ You can find your own number in the ssh command line that you use to connect to 
 
 
 
-## Preparing your dataset
+## Create a dataset
 
+Your training dataset should have about 10-20 minutes of audio from your chosen instrument (violin, guitar...). The timbre transfer technique is designed for monophonic audio, but polyphonic recordings can also produce interesting results. Experiment!
+
+
+## Convert to TFRecord
+
+DDSP expects input in the TFRecord format, which is a generic file format for TensorFlow data. So, the WAV files need to be converted.  
+To make the conversion, you can use the `make-dataset` command. 
+
+Run it as follows:
 ```
 ./dlwa.py ddsp make-dataset --input_name your_name/violin --dataset_name your_name/myviolindataset 
 ```
 
-Saves data.tfrecord files in the `dataset/ddsp/your_name/myviolindataset` directory.
+It will look into the input directory `input/your_name/violin` and save the corresponding data.tfrecord files in the output directory `dataset/ddsp/your_name/myviolindataset`.
 
 Note:
 - *your_name/violin* and  *your_name/myviolindataset* should be replaced with your own folder names.
@@ -57,6 +64,7 @@ Note:
 
 ## Starting the training
 
+Run the training with the `train` command:
 ```
 ./dlwa.py ddsp train --dataset_name your_name/myviolindataset --model_name your_name/myviolinmodel
 ```
@@ -101,7 +109,7 @@ aborting
 You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. 
 Open a new terminal window make sure that you are in your own computer/laptop directory.  
 
-* Transfer a folder:
+* Transfer the folder of the trained model
 
 ```
 scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/models/ddsp/your_name/myviolinmodel ~/Downloads

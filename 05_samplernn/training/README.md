@@ -10,6 +10,12 @@ If you want to train on Aalto computers, see our [Using Aalto computers](../usin
 
 ----
 
+## Using `dlwa` on AzureVM
+
+If you want to train SampleRNN in an easy way with our `dlwa.py` script and on AzureVM, see our [Training SampleRNN on AzureVM](./azure_samplernn.md) document.
+
+----
+
 ## Install SampleRNN
 
 Follow the [instructions](README.md) to install PRiSM SampleRNN. You don't need `sopilib` or anything else from the `DeepLearningWithAudio` repository for training.

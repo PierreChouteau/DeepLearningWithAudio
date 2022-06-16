@@ -58,7 +58,7 @@ Note:
 
 ### Convert to TFRecord
 
-GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our script `make-dataset` command.
+GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our `make-dataset` command.
 
 Run it as follows:
 
@@ -74,6 +74,7 @@ Note:
 
 ## Starting the training
 
+Run the training with the `train` command:
 ```
 ./dlwa.py gansynth train --dataset_name your_name/mydataset --model_name your_name/mymodel
 ```
@@ -117,7 +118,7 @@ aborting
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. 
+You can transfer your files, such as trained models from your the virtual machine to your on own PC following the below command line structure. 
 Open a new terminal window make sure that you are in your own computer/laptop directory.  
 
 * Transfer a folder
