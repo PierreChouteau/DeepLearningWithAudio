@@ -6,7 +6,7 @@ For more information on how to use it, and on the organization of the directory,
 ---
 
 Log in to https://labs.azure.com
-(see the [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+(see the [login instructions](../../00_introduction/))
 
 Enter the DLWA directory:
 ```
@@ -15,7 +15,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 
 ## Transfer your files to the VM 
 
-You can transfer your files from your own PC to the VM following the below command line structure. 
+You can transfer your files from your own PC to the VM following the below command line structure.  
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
 
 * Transfer a folder
@@ -59,7 +59,7 @@ It will look into the input directory `input/your_name/violin` and save the corr
 
 Note:
 - *your_name/violin* and  *your_name/myviolindataset* should be replaced with your own folder names.
-- By default, this command uses specific parameters. To change these parameters, you can use the custom and extra arguments, see [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
 
 
@@ -70,20 +70,20 @@ Run the training with the `train` command:
 ./dlwa.py ddsp train --dataset_name your_name/myviolindataset --model_name your_name/myviolinmodel
 ```
 
-This command line will start the DDSP training and saves trained checkpoints, log, summaries in the `models/ddsp/your_name/myviolinmodel` directory.
+This command line will start the DDSP training and save the checkpoints, logs and summaries in the `models/ddsp/your_name/myviolinmodel` directory.
 
 Note:
-- *your_name/myviolindataset* and  *your_name/myviolinmodel* should be replaced with your own folder names.
-- By default, this command use specific parameters. If you want to go in details to customize your training, you can check them [here](../../utilities/dlwa/README.md#custom-argument-extraargument).
+- *your_name/myviolindataset* and *your_name/myviolinmodel* should be replaced with your own folder names.
+- By default, this command uses specific parameters. If you want to go in details to customize your training, you can check them [here](../../utilities/dlwa/README.md#custom-argument-extraargument).
 
 
 
 ### Monitor the training
 
-It is most likely that DDSP training will take approximatley 17 hours, during which you can log in and monitor the status of your training. To do that;
+It is most likely that DDSP training will take approximatley 17 hours, during which you can log in and monitor the status of your training. To do that:
 
 Log in to https://labs.azure.com
-(see the [login instructions](https://github.com/SopiMlab/DeepLearningWithAudio/blob/master/00_introduction/))
+(see the [login instructions](../../00_introduction/))
 
 Enter the DLWA directory:
 ```
@@ -91,7 +91,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ./dlwa.py util screen-attach
 ```
 
-- If your **traning still continues**, you will see similar output on your termninal window:
+- If your **training still continues**, you will see similar output on your terminnal window:
 ```
 I0413 06:28:29.788176 140451635803968 train_util.py:306] step: 25825    spectral_loss: 5.92     total_loss: 5.92  
 I0413 06:28:31.960153 140451635803968 train_util.py:306] step: 25826    spectral_loss: 5.85     total_loss: 5.85  
@@ -99,7 +99,7 @@ I0413 06:28:34.149478 140451635803968 train_util.py:306] step: 25827    spectral
 I0413 06:28:36.336162 140451635803968 train_util.py:306] step: 25828    spectral_loss: 4.78     total_loss: 4.78 
 ```
 
-- If your **traning is completed or ended with an error**, you will see the below text:
+- If your **training is completed or ended with an error**, you will see the below text:
 ```
 script failed: attach dlwa screen
 aborting
@@ -108,8 +108,8 @@ aborting
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from your the virtual machine to your on own PC  following the below command line structure. 
-Open a new terminal window make sure that you are in your own computer/laptop directory.  
+You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure. 
+Open a new terminal window and make sure that you are in your own laptop directory.  
 
 * Transfer the folder of the trained model
 
@@ -119,5 +119,5 @@ scp -P 63635 -r e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeuro
 
 Note:  
 - The number (*63635*) in the command line above should be replaced with your personal number.  
-You can find your own number in the ssh command line that you use to connect to the VM. (see the  [login instructions](../../../00_introduction/))
+You can find your own number in the ssh command line that you use to connect to the VM. (see the [login instructions](../../00_introduction/))
 - *your_name/myviolinmodel* and *~/Downloads* should be replaced with your directory path in your own machine. 

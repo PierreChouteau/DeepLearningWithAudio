@@ -19,7 +19,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 
 Before transferring your files and running chunk_audio, you should convert your audio to your desired sample rate (16000 Hz by default) and mono. The train script is supposed to handle this automatically, but it seems to be buggy at the moment.
 
-You can transfer your files from your own PC to the VM following the below command line structure. 
+You can transfer your files from your own PC to the VM following the below command line structure.  
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
 
 * Transfer a folder
@@ -54,7 +54,7 @@ It will saves all the chunk files into `inputs/your_name/myinputs_chunk` (The fo
 
 Note:
 - *your_name/samplernn-inputs* and  *your_name/samplernn-inputs_chunks* should be replaced with your own folder names.
-- By default, this command use specific parameters to chunk the audio. To change these parameters, you can use the custom and extra arguments, see [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).   
+- By default, this command uses specific parameters to chunk the audio. To modify these parameters, you can use the [custom and extra arguments](../../utilities/dlwa/README.md#custom-argument-extraargument).   
 
 
 
@@ -64,20 +64,19 @@ Note:
 ./dlwa.py samplernn train --input_name your_name/samplernn-inputs_chunks --model_name  your_name/mysamplernnmodel  --preset lstm-linear-skip
 ```
 
-This command line will start the SampleRNN training and will save the trained checkpoints and logs into `models/samplernn/your_name/model_name`. It will also saves the generated audio into `generated/your_name/model_name`.
+This command line will start the SampleRNN training and will save the checkpoints and logs into `models/samplernn/your_name/mysamplernnmodel`. It will also save the generated audio into `generated/your_name/mysamplernnmodel`.
 
 
 Note:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
 - `--preset lstm-linear-skip` is the default choice with dlwa script.
-- By default, this command use specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use custom and extra parameters.
-See [custom and extra arguments with dlwa](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
 
 
 ### Monitor the training
 
-It is most likely that SampleRNN training will take approximatley 38 hours, during which you can log in and monitor the status of your training. To do that:
+It is most likely that SampleRNN training will take approximatley 48 hours, during which you can log in and monitor the status of your training. To do that:
 
 Log in to https://labs.azure.com (see the [login instructions](../../00_introduction/))
 
@@ -88,7 +87,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 ./dlwa.py util screen-attach
 ```
 
-- If your **traning still continues**, you will see similar output on your termninal window:
+- If your **training still continues**, you will see similar output on your termninal window:
 
 ```
 Epoch: 27/100, Step: 6/250, Loss: 1.355, Accuracy: 46.000, (4.365 sec/step)
@@ -97,7 +96,7 @@ Epoch: 27/100, Step: 8/250, Loss: 1.349, Accuracy: 46.208, (4.323 sec/step)
 Epoch: 27/100, Step: 9/250, Loss: 1.344, Accuracy: 46.309, (4.358 sec/step)
 ```
 
-- If your **traning is completed**, you will see the below text on your terminal window:
+- If your **training is completed**, you will see the below text on your terminal window:
 
 ```
 script failed: attach dlwa screen
@@ -107,8 +106,8 @@ aborting!
 
 ## Transfer your trained model to your own laptop
 
-You can transfer your files, such as trained models from your the virtual machine to your on own PC following the below command line structure. 
-Open a new terminal window make sure that you are in your own computer/laptop directory.  
+You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure. 
+Open a new terminal window and make sure that you are in your own laptop directory.  
 
 * Transfer a folder
 

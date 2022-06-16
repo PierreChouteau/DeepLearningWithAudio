@@ -6,7 +6,7 @@ This guide describes how to train a DDSP timbre transfer model using your own so
 
 ## Using Aalto computers
 
-If you want to train on Aalto computers, see our [Using Aalto computers](../../using-aalto-computers.md) document. After logging into Aalto computers, follow the below instructions (starting with `ffmpeg`).
+If you want to train on Aalto computers, see our [Using Aalto computers](../../using-aalto-computers.md) document. After connecting to the Aalto computers, follow the instructions below (starting with `ffmpeg`).
 
 For training on the Triton computing cluster, see also [Training DDSP on Triton](triton/README.md).
 
