@@ -63,7 +63,7 @@ Argument to add if necessary:
 
 This command line will create suitable 4s chopped files in the `$WRKDIR/mysampleschopped` directory.  
  
-### Convert to TFRecord 
+### Convert to TFRecord 
 
 GANSynth expects input in the TFRecord format (a generic file format for TensorFlow data), so the WAV files need to be converted. This can be done with our `make_dataset.py` script:
 ```
