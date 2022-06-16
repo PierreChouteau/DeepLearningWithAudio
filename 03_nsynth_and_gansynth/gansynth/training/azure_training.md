@@ -44,7 +44,8 @@ You can find your own number in the ssh command line that you use to connect to 
 ### Preparing your dataset
 
 To chop up long files to the desired length and sampling rate (4s and 16000Hz for GANSynth), you can use the `chop-audio` command.  
-To run it:
+
+Run it as follows:
 ```
 ./dlwa.py gansynth chop-audio --input_name your_name/mytunes --output_name your_name/mysounds_chopped
 ```
@@ -53,7 +54,7 @@ This will create suitable 4s chopped files in the `input/your_name/mysounds_chop
 
 __Note__:
 - *your_name/mytunes* and *your_name/mysounds_chopped* should be replaced with your own folder names.
-- By default, this command line uses specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument)
+- By default, this command line uses specific parameters. You can change them by adding extra arguments, see the documentation [here](../../../utilities/dlwa/README.md#custom-argument-extraargument).
 
 
 

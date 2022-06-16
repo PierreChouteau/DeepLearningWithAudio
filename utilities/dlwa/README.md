@@ -80,7 +80,7 @@ To use a custom argument, add it to the end of the command line:
 --customArguments ...
 ```
 
-To use extra argument, add it to the end of the command line: 
+To use extra argument, same thing: 
 ```
 ./dlwa.py MODEL COMMAND [ARGUMENTS ...] \
 -- \ 
@@ -89,9 +89,9 @@ To use extra argument, add it to the end of the command line:
 
 #### DDSP:
 
-For the DDSP model, 2 different scripts can be use with custom arguments or extra_arguments. If you want to use them, you will need to use it as follows:
+For the DDSP model, 2 different scripts can be use with custom arguments or extra arguments. If you want to use them, you will need to run it as follows:
 
-Note:
+__Note__:
 - The values below are the one that is used without changing custom arguments.
 - All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
 
@@ -116,9 +116,9 @@ Note:
 
 #### GANSynth:
 
-For the GANSynth model, 2 different scripts can be use with extra_arguments. If you want to use them, you will need to use it as follows:
+For the GANSynth model, 2 different scripts can be use with extra arguments. If you want to use them, you will need to run it as follows:
 
-Note: The values are the default one.
+__Note__: The values are the default one.
 
 - ``` 
   ./dlwa.py gansynth chop-audio --input_name mytunes --output_name mysounds_chopped \
@@ -139,9 +139,9 @@ Note: The values are the default one.
 
 #### SampleRNN:
 
-For the SampleRNN model, 2 different scripts can be use with custom arguments or extra_arguments. If you want to use them, you will need to use it as follows:
+For the SampleRNN model, 2 different scripts can be use with custom arguments or extra arguments. If you want to use them, you will need to run it as follows:
 
-Note: 
+__Note__: 
 - The values below are the one that is used without changing custom arguments.
 - All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
 

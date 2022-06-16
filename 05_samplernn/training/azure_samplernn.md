@@ -19,7 +19,7 @@ cd /data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa
 
 ## Transfer your files to the VM 
 
-Before transferring your files and running chunk_audio, you should convert your audio to your desired sample rate (16000 Hz by default) and mono. The train script is supposed to handle this automatically, but it seems to be buggy at the moment.
+Before transferring your files and running chunk_audio, you should convert your audio to your desired ***sample rate*** (16000 Hz by default) and ***mono***. The `train` script is supposed to handle this automatically, but it seems to be buggy at the moment.
 
 You can transfer your files from your own PC to the VM following the below command line structure.  
 Open a new terminal window and make sure that you are in your own computer/laptop directory.
@@ -72,7 +72,7 @@ This command line will start the SampleRNN training and will save the checkpoint
 __Note__:
 - *your_name/samplernn-inputs_chunks* and  *your_name/mysamplernnmodel* should be replaced with your own folder names.
 - `--preset lstm-linear-skip` is the default choice with dlwa script.
-- By default, this command uses specific parameters. For example, the default sampling rate is specify as 16000Hz, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extraargument).  
+- By default, this command uses specific parameters. For example, the default `sample rate` is specify as `16000Hz`, so if you want to use another sampling rate, you will need to use [custom parameters](../../utilities/dlwa/README.md#custom-argument-extraargument).  
 
 
 
