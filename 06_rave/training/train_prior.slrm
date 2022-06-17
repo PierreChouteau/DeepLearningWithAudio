@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --time=05-00:00:00
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=32G
+#SBATCH --gres=gpu:v100:1
+
+module purge
+module -q load anaconda3
+source activate "/scratch/work/choutep1/.conda_envs/rave"
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+
+python ../train_prior.py --pretrained-vae ../rave_magnatagatune_model.ts --preprocessed ./magnatagatune_model/prior --wav /scratch/other/sopi/RAVE/dataset/magna-tag-a-tune/out_16000/ --name magnatagatune_model
