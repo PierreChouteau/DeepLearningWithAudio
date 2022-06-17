@@ -19,12 +19,12 @@ Once registered to the Azure Lab, you will be able to see the virtual machine fo
 
 To start/stop the VM:
 
-- Click on the __Start__ button. This process takes some time, especially for the first time. The machine is now running. 
+- Click on the __Start__ button. This process takes some time, especially for the first time. After that, the machine will be running.
 - Click on the __Connect__ button (small computer icon) to connect to the VM.  
 When you log in for the first time you will be asked to set a password. It is a personal password, that you will have to enter every time you want to connect to the machine.
 
-Note:  
-To stop the VM, click on the same button as to start the VM.
+__Note:__  
+To stop the VM, click on the same button as to start it.
 
 
 ## Student Azure Lab VM Log in 
@@ -43,11 +43,9 @@ ssh -p 63635 e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.
 
 Open a __Terminal window__, paste the command line that you copied and click on enter.
 
-Now you are in the __Deep Learning with Audio VM__.  
+You are now in the __Deep Learning with Audio VM__.  
 
-
-
-Note:  
+__Note:__  
 If you have any problem with our instructions to connect to the VM, take a look to the official instructions:
 - For registration [here](https://docs.microsoft.com/en-us/azure/lab-services/how-to-use-lab)
 - To Connect to a Linux lab VM [here](https://docs.microsoft.com/en-us/azure/lab-services/connect-virtual-machine)
