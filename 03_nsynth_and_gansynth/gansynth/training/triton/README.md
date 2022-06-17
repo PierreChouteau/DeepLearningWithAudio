@@ -41,21 +41,21 @@ cd "$WRKDIR"
 ```
 
 Create a folder and put all your WAV files in it.  
-e.g :
+__e.g:__
 ```
 wget "https://dl.dropboxusercontent.com/s/0qn8nsh0ljym7dl/samples.zip?dl=0"
 mv samples.zip\?dl=0 samples.zip 
 unzip samples.zip
 ```
 
-To chop up long files to the desired length and sampling rate (4s and 16000Hz for GANSynth), you can use the `chop.py` script.  
+To chop up long files to the desired length and sample rate (4s and 16000Hz for GANSynth), you can use the `chop.py` script.  
 
-To run it:
+Run it as follows:
 ```
 python $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/chop.py --step 16000 samples mysampleschopped
 ```
 
-Argument to add if necessary:  
+__Argument to add if necessary:__  
 - `--sample_rate` -> default=16000  
 - `--len` -> default=64000  
 - `--step` -> default=64000  
@@ -70,8 +70,8 @@ GANSynth expects input in the TFRecord format (a generic file format for TensorF
 python $WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/make_dataset.py --in_dir mysampleschopped --out_dir mydataset
 ```
 
-Argument to add if necessary:  
-- `--out_dir` : the folder will be create by the script, so don't create it before  
+__Argument to add if necessary:__  
+- `--out_dir` : the folder will be created by the script, so don't create it before  
 - `--sample_rate` -> default=16000  
 - `--length` -> default=64000  
 
@@ -91,11 +91,11 @@ When your dataset is ready, submit a batch job using our `train.slrm` script. Th
 
 It is best to submit the job from a fresh shell with no modules loaded and no Conda environment active, as an active environment may [mess up](https://version.aalto.fi/gitlab/AaltoScienceIT/triton/issues/612) some Python paths.
 
+To submit a GANSynth training job, enter the triton directory:
 ```
 cd "$WRKDIR/DeepLearningWithAudio/03_nsynth_and_gansynth/gansynth/training/triton"
 ```
-
-To submit a GANSynth training job, run:
+And run:
 ```
 sbatch train.slrm \
     --conda_env "$WRKDIR/conda/gansynth" \
@@ -104,16 +104,16 @@ sbatch train.slrm \
     --train_root_dir "$WRKDIR/mymodel"
 ```
 
+__Note:__  
 If you want to change the config file for training parameters, like batch size, num_trans_images... just go to: 
 ```
 cd $WRKDIR/magenta/magenta/models/gansynth/configs
 vim mel_prog_hires.py
-```
-
-Change what you want:  
-- To change something on vim, you need to be in `--insert--` mode ! Type `i` to enter this mode. 
-- To save your changes it is `:x` | to quit `:q` | to quit without save changes `:q!` 
-
+```  
+And modify the parameters you want:  
+ + To change something on vim, you need to be in `--insert--` mode ! Type `i` to enter this mode. 
+ + To save your changes, it is `:x` | to exit `:q` | to exit without saving changes `:q!`
+<br/><br/>
 
 To train with a dataset that has extra labels (here `nsynth_qualities_tfrecord`):
 
