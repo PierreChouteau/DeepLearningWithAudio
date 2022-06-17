@@ -66,8 +66,9 @@ Or a wildcard:
 
 ## DDSP Training
 
-When you have your TFRecord dataset, it is time to start your DDSP training. 
-To submit a DDSP training, you can use our `ddsp_run.slrm` script. You just need to run:
+When you have your TFRecord dataset, it is time to start your DDSP training. To submit a DDSP training, you can use our `ddsp_run.slrm` script.  
+
+Run it as follows:
 
 ```
 sbatch $WRKDIR/DeepLearningWithAudio/DeepLearningWithAudio/02_ddsp/training/triton/ddsp_run.slrm \
