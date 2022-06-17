@@ -58,7 +58,7 @@ optional arguments:
 ./dlwa.py ddsp setup
 ```
 Sets up a Conda environment for ddsp, installing all the necessary packages.  
-For the other models, change ddsp by their name to set up the different Conda environnement. (eg. `./dlwa.py gansynth setup`, same thing for samplernn and nsynth)
+For the other models, replace ddsp by their name to set up the different Conda environment. (eg. `./dlwa.py gansynth setup`, same thing for samplernn and nsynth)
 
 
 ### Dataset, Training 
@@ -86,14 +86,10 @@ To use extra argument, same thing:
 -- \ 
 --extraArguments ...
 ```
-
+-----
 #### DDSP:
 
-For the DDSP model, 2 different scripts can be use with custom arguments or extra arguments. If you want to use them, you will need to run it as follows:
-
-__Note__:
-- The values below are the one that is used without changing custom arguments.
-- All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
+For the DDSP model, 2 different scripts can be used with custom arguments or extra arguments. If you want to use them, you will have to run it as follows:
 
 - ``` 
   ./dlwa.py ddsp make-dataset --input_name input_folder --dataset_name dataset_folder \
@@ -113,12 +109,15 @@ __Note__:
     --gin_param train_util.train.steps_per_save=300 \
     --gin_param train_util.Trainer.checkpoints_to_keep=10
   ``` 
+  
+__Note__:
+- The values above are the ones that is used by default, without changing custom arguments.
+- All the custom arguments are required by the script. So, if you want to change any of them, you will have to use the full command line, with all the custom arguments.
 
+-----
 #### GANSynth:
 
-For the GANSynth model, 2 different scripts can be use with extra arguments. If you want to use them, you will need to run it as follows:
-
-__Note__: The values are the default one.
+For the GANSynth model, 2 different scripts can be used with extra arguments. If you want to use them, you will have to run it as follows:
 
 - ``` 
   ./dlwa.py gansynth chop-audio --input_name mytunes --output_name mysounds_chopped \
@@ -136,14 +135,12 @@ __Note__: The values are the default one.
     --length 64000
   ``` 
 
+__Note__: The values above are the default ones.
 
+-----
 #### SampleRNN:
 
-For the SampleRNN model, 2 different scripts can be use with custom arguments or extra arguments. If you want to use them, you will need to run it as follows:
-
-__Note__: 
-- The values below are the one that is used without changing custom arguments.
-- All the custom arguments are required by the script. So if you want to change one of them, you will need to use the full command line, with all the custom argument.
+For the SampleRNN model, 2 different scripts can be used with custom arguments or extra arguments. If you want to use them, you will have to run it as follows:
 
 - ``` 
   ./dlwa.py samplernn chunk-audio --input_name myinputs --output_name myinputs_chunks \
@@ -161,3 +158,7 @@ __Note__:
     --sample_rate 16000 \
     --config_file ./misc/samplernn/lstm-linear-skip.config.json
   ``` 
+
+__Note__: 
+- The values above are the ones that is used by default, without changing custom arguments.
+- All the custom arguments are required by the script. So, if you want to change any of them, you will have to use the full command line, with all the custom arguments.
