@@ -21,7 +21,7 @@ Your training dataset should have about 10-20 minutes of audio from your chosen 
 ### Transfer your files to the VM 
 
 You can transfer your files from your own PC to the VM following the below command line structure.  
-Open a new terminal window and make sure that you are in your own computer/laptop directory.
+Open a new terminal window and make sure you are in your own computer/laptop directory.
 
 * Transfer a folder
 
@@ -34,7 +34,7 @@ scp -P 63635 -r violin e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.w
 * Transfer a file
 
 To transfert just a file, it is the same command line without the ```-r``` (-r = recursive).  
-For example, if you want to transfer a file that is called: `violin.wav`, the command will be:
+For example, if you want to transfer a file called: `violin.wav`, the command will be:
 ```
 scp -P 63635 violin.wav e5132-admin@ml-lab-00cec95c-0f8d-40ef-96bb-8837822e93b6.westeurope.cloudapp.azure.com:/data/dome5132fileshare/DeepLearningWithAudio/utilities/dlwa/inputs/your_name
 ```
@@ -109,7 +109,7 @@ aborting
 ## Transfer your trained model to your own laptop
 
 You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure.  
-Open a new terminal window and make sure that you are in your own laptop directory.  
+Open a new terminal window and make sure you are in your own laptop directory.  
 
 * Transfer the folder of the trained model
 

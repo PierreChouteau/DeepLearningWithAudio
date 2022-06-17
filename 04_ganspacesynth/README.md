@@ -96,7 +96,7 @@ aborting
 ### Transfer your trained model to your own computer/laptop
 
 You can transfer your files, such as trained models from the VM to your own laptop following the below command line structure.  
-Open a new terminal window and make sure that you are in your own computer/laptop directory.
+Open a new terminal window and make sure you are in your own computer/laptop directory.
 
 - Transfer the ganspace.pickle file
 
