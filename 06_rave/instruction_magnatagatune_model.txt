@@ -1,0 +1,40 @@
+========================================================================================================================
+                                       MAGNATAGATUNE_MODEL: TRAINING INSTRUCTIONS
+========================================================================================================================
+
+
+TRAIN RAVE
+----------
+
+Train rave (both training stages are included)
+
+python train_rave.py -c default --name magnatagatune_model --wav /scratch/other/sopi/RAVE/magna-tag-a-tune/out_16000/ --preprocessed ./magnatagatune_model/rave --sr 16000 
+
+You can follow the training using tensorboard
+
+tensorboard --logdir . --bind_all
+
+Once the training has reached a satisfactory state, kill it (ctrl + C)
+
+TRAIN PRIOR
+-----------
+
+Export the latent space trained on magnatagatune_model.
+
+python export_rave.py --run runs/magnatagatune_model/rave --cached false --name magnatagatune_model
+
+Train the prior model.
+
+python train_prior.py --pretrained-vae rave_magnatagatune_model.ts --preprocessed ./magnatagatune_model/prior --wav /scratch/other/sopi/RAVE/magna-tag-a-tune/out_16000/ --name magnatagatune_model
+
+Once the training has reached a satisfactory state, kill it (ctrl + C)
+
+========================================================================================================================
+                                            EXPORT TO MAX MSP (COMING SOON)
+========================================================================================================================
+
+In order to use both **rave** and the **prior** model inside max/msp, we have to export them using **cached convolutions**.
+
+python export_rave.py --run runs/magnatagatune_model/rave --cached true --name magnatagatune_model_rt
+python export_prior.py --run runs/magnatagatune_model/prior --name magnatagatune_model_rt
+python combine_models.py --prior prior_magnatagatune_model_rt.ts --rave rave_magnatagatune_model_rt.ts --name magnatagatune_model
