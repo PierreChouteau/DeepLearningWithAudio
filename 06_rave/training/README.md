@@ -1,6 +1,6 @@
 # Training RAVE on Triton
 
-This guide supplements the [official RAVE training guide](../README.md). It is assumed you have access to the [Triton](https://scicomp.aalto.fi/triton/) computing cluster and basic familiarity with how to run batch jobs there.
+This guide supplements the [official RAVE training guide](https://github.com/acids-ircam/RAVE/blob/master/docs/training_setup.md). It is assumed you have access to the [Triton](https://scicomp.aalto.fi/triton/) computing cluster and basic familiarity with how to run batch jobs there.
 
 Start by login into Triton:
 ```
@@ -30,7 +30,7 @@ Prepare your dataset and copy the files to Triton.
 Before to start the training, take a look to the [preprocessing part](../README.md#preprocessing), more detail [here](../docs/training_setup.md#about-the-dataset).
 
 The authors of RAVE advise to have at least 3h of homogeneous recordings to train the model, more if the dataset is complex.  
-It is possible to use audio files with different sampling rate and with a different extension (mp3, wav, flac...), you just need to use `resample` utility in the folder where your files are located. 
+It is possible to use audio files with different sampling rate and with a different extension (mp3, wav, flac...), you just need to use the `resample` utility in the folder where your files are located. 
 
 ```
 conda activate rave
@@ -42,7 +42,7 @@ It will convert, resample, crop and augment all audio files present in the direc
 
 ### Preparation for the training
 
-To obtain the insruction related to the training, you can use the `cli_helper.py`. 
+To obtain the insruction related to the training, you can use the `cli_helper_triton.py` script. 
 You can run:
 
 ```
@@ -70,7 +70,7 @@ cd "$WRKDIR/RAVE/triton"
 sbatch train_rave.slrm
 ```
 
-When this training will be finished, you will need to export the model with `export_rave.py` before to start the prior training. (Like it is explained in the [instruction.txt](instruction_magnatagatune_model.txt))
+When this training will be finished, you will need to export the model with `export_rave.py` before to start the prior training. (Like it is explained in the [instruction.txt](./instruction_modelname.txt))
 
 ```
 cd "$WRKDIR/RAVE"
@@ -89,7 +89,7 @@ sbatch train_prior.slrm
 
 ### Export the final model
 
-When the second training is finished, you can export the full model by following the last instruction of the [text file](instruction_magnatagatune_model.txt):
+When the second training is finished, you can export the full model by following the last instruction of the [text file](./instruction_modelname.txt):
 
 ```
 cd "$WRKDIR/RAVE"

@@ -1,6 +1,6 @@
 # RAVE - Realtime Audio Variational autoEncoder
 
-RAVE is another generative deep learning model for audio. This model has been introduced at the end of 2021 by Antoine Caillon and Philippe Esling. It allows fast and high-quality neural audio synthesis and is the first generative model that is able to generate 48kHz audio signals, while simultaneously running 20 times faster than real time on CPU level.  
+[RAVE](https://github.com/acids-ircam/RAVE) is another generative deep learning model for audio. This model has been introduced at the end of 2021 by Antoine Caillon and Philippe Esling. It allows fast and high-quality neural audio synthesis and is the first generative model that is able to generate 48kHz audio signals, while simultaneously running 20 times faster than real time on CPU level.  
 
 The model is based on a VAE architecture and introduce a novel two stage training procedure:
 - The first stage of the training permits to learn the representation of the audio by training a regular VAE. It learns to encode the original audio into a latent representation and then decode it, to reconstruct as perfect as possible. 
@@ -69,7 +69,7 @@ You can now open Puredata and use the nn~ object to generate sound in real time 
 
 ## Checkpoints
 
-We have some pre-trained checkpoints in the [SOPI Google Drive](https://drive.google.com/drive/folders).
+We have some pre-trained checkpoints in the [SOPI Google Drive](https://drive.google.com/drive/folders/1dapl3hR5SSGnzkc39LqD5vFyNVllWvA5).
 
 
 ## RAVE Training
