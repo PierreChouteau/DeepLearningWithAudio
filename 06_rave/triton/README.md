@@ -47,7 +47,7 @@ You can run:
 
 ```
 cd "$WRKDIR/RAVE"
-python cli_helper.py
+python cli_helper_triton.py
 ```
 
 It will ask for some parameters that you can change in the model (such as `batch_size`, `latent_dim`, `sampling_rate`...), and create a [text file](instruction_magnatagatune_model.txt) with the different command lines you will need to run to start the training. 
