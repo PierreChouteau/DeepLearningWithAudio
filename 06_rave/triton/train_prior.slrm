@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --time=05-00:00:00
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=32G
+#SBATCH --gres=gpu:v100:1
+
+GETOPTS_RESULT=$(getopt -o '' -l conda_env: -n train -- "$@")
+
+eval set -- "$GETOPTS_RESULT"
+
+while true; do
+    case "$1" in
+        --conda_env )
+            CONDA_ENV="$2"
+            shift 2
+            ;;
+        * )
+            break
+            ;;
+    esac
+done
+
+usage() {
+    echo 'usage: train_prior.slrm --conda_env CONDA_ENV' 1>&2
+}
+
+if [ ! -n "$CONDA_ENV" ]; then
+    usage
+    exit 1
+fi
+
+if [ -n "$SLURM_SUBMIT_DIR" ]; then
+    cd "$SLURM_SUBMIT_DIR"
+fi
+
+echo "conda environment: $CONDA_ENV" 1>&2
+echo 1>&2
+
+module purge
+module -q load anaconda3
+source activate "$CONDA_ENV"
+
+python ../train_prior.py --pretrained-vae ../rave_magnatagatune_model.ts --preprocessed ./magnatagatune_model/prior --wav /scratch/other/sopi/RAVE/dataset/magna-tag-a-tune/out_16000/ --name magnatagatune_model

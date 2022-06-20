@@ -2,6 +2,11 @@
 
 This guide supplements the [official RAVE training guide](../README.md). It is assumed you have access to the [Triton](https://scicomp.aalto.fi/triton/) computing cluster and basic familiarity with how to run batch jobs there.
 
+Start by login into Triton:
+```
+ssh username@triton.aalto.fi
+```
+
 ## Set up the Conda environment
 
 ```
@@ -13,6 +18,7 @@ source activate "$WRKDIR/conda/rave"
 git clone https://github.com/SopiMlab/RAVE.git
 cd RAVE
 pip install -r requirements.txt
+pip install protobuf==3.20.1
 ```
 
 
@@ -44,7 +50,7 @@ cd "$WRKDIR/RAVE"
 python cli_helper.py
 ```
 
-It will ask for some parameters that you can change in the model (such as `batch_size`, `latent_dim`, `sampling_rate`...), and create a [text file](../instruction_magnatagatune_model.txt) with the different command line you will need to run the training. 
+It will ask for some parameters that you can change in the model (such as `batch_size`, `latent_dim`, `sampling_rate`...), and create a [text file](instruction_magnatagatune_model.txt) with the different command lines you will need to run to start the training. 
 
 
 ### Change the .slrm script to start the training
@@ -52,7 +58,7 @@ It will ask for some parameters that you can change in the model (such as `batch
 Because we want to start the training in Triton, we will need to change the .slrm script.
 
 Open the instruction.txt file and copy the command line that correspond to the rave training, and past it in the [`train_rave.slrm`](./train_rave.slrm) in the triton directory.  
-You can do the same for the prior training, copy the train command line and past it into the [`train_prior.slrm`](./train_prior.slrm) scipt in the triton directory. 
+You can do the same for the prior training, copy the train command line and past it into the [`train_prior.slrm`](./train_prior.slrm) script in the triton directory. 
 
 
 ### Start rave training
@@ -64,7 +70,7 @@ cd "$WRKDIR/RAVE/triton"
 sbatch train_rave.slrm
 ```
 
-When this training will be finished, you will need to export the model with `export_rave.py` before to start the prior training. (Like it is explained in the [instruction.txt](../instruction_magnatagatune_model.txt))
+When this training will be finished, you will need to export the model with `export_rave.py` before to start the prior training. (Like it is explained in the [instruction.txt](instruction_magnatagatune_model.txt))
 
 ```
 cd "$WRKDIR/RAVE"
@@ -83,12 +89,12 @@ sbatch train_prior.slrm
 
 ### Export the final model
 
-When the second training is finished, you can export the full model by following the last instruction of the [text file](../instruction_magnatagatune_model.txt):
+When the second training is finished, you can export the full model by following the last instruction of the [text file](instruction_magnatagatune_model.txt):
 
 ```
 cd "$WRKDIR/RAVE"
-python export_rave.py --run runs/magnatagatune_model/rave --cached true --name magnatagatune_model_rt
-python export_prior.py --run runs/magnatagatune_model/prior --name magnatagatune_model_rt
+python export_rave.py --run triton/runs/magnatagatune_model/rave --cached true --name magnatagatune_model_rt
+python export_prior.py --run triton/runs/magnatagatune_model/prior --name magnatagatune_model_rt
 python combine_models.py --prior prior_magnatagatune_model_rt.ts --rave rave_magnatagatune_model_rt.ts --name magnatagatune_model
 ```
 
