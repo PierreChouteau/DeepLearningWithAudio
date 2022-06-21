@@ -37,7 +37,7 @@ conda activate rave
 resample --sr TARGET_SAMPLING_RATE --augment
 ```
 
-It will convert, resample, crop and augment all audio files present in the directory to an output directory called `out_TARGET_SAMPLING_RATE/` (which is the one you should give to `cli_helper.py` when asked for the path of the .wav files).
+It will convert, resample, crop and augment all audio files present in the directory to an output directory called `out_TARGET_SAMPLING_RATE/` (which is the one you should give to `cli_helper_triton.py` when asked for the path of the .wav files).
 
 
 ### Preparation for the training
@@ -67,7 +67,7 @@ Now that our slurm script are good to go, you can run the `train_rave.slrm` scri
 
 ```
 cd "$WRKDIR/RAVE/triton"
-sbatch train_rave.slrm
+sbatch train_rave.slrm --conda_env path/to/conda_env
 ```
 
 When this training will be finished, you will need to export the model with `export_rave.py` before to start the prior training. (Like it is explained in the [instruction.txt](./instruction_modelname.txt))
@@ -83,7 +83,7 @@ python export_rave.py --run triton/runs/magnatagatune_model/rave --cached false 
 To start the prior training, you can run the `train_prior.slrm` script: 
 ```
 cd "$WRKDIR/RAVE/triton"
-sbatch train_prior.slrm
+sbatch train_prior.slrm --conda_env path/to/conda_env
 ```
 
 
