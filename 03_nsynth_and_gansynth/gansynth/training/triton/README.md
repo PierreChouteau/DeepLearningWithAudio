@@ -79,7 +79,6 @@ __Argument to add if necessary:__
 The script will generate 2 files (`data.tfrecord` and `meta.json`) in the `$WRKDIR/mydataset` directory. You will need them later.
 
 ## Train
-
 ### GANSynth Training
 
 When your dataset is ready, submit a batch job using our `train.slrm` script. The script requires the following arguments:
