@@ -27,7 +27,7 @@ pip install protobuf==3.20.1
 ### Dataset
 
 Prepare your dataset and copy the files to Triton.  
-Before to start the training, take a look to the [preprocessing part](../README.md#preprocessing), more detail [here](../docs/training_setup.md#about-the-dataset).
+Before to start the training, take a look to the [preprocessing part](https://github.com/SopiMlab/RAVE#preprocessing), more detail [here](https://github.com/SopiMlab/RAVE/blob/master/docs/training_setup.md#about-the-dataset).
 
 The authors of RAVE advise to have at least 3h of homogeneous recordings to train the model, more if the dataset is complex.  
 It is possible to use audio files with different sampling rate and with a different extension (mp3, wav, flac...), you just need to use the `resample` utility in the folder where your files are located. 
@@ -50,7 +50,7 @@ cd "$WRKDIR/RAVE"
 python cli_helper_triton.py
 ```
 
-It will ask for some parameters that you can change in the model (such as `batch_size`, `latent_dim`, `sampling_rate`...), and create a [text file](instruction_magnatagatune_model.txt) with the different command lines you will need to run to start the training. 
+It will ask for some parameters that you can change in the model (such as `batch_size`, `latent_dim`, `sampling_rate`...), and create a [text file](./instruction_modelname.txt) with the different command lines you will need to run to start the training. 
 
 
 ### Change the .slrm script to start the training
